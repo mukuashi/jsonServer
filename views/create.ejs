@@ -4,23 +4,23 @@
 	<span class="namespan">API名称</span>
 	<div class="ti1">
 		<%if(isEdit){%>
-			<input type="text" id="apiname" class="nameinput" value="<%=stringValueJson.name%>" >
+			<input type="text" id="apiname" class="nameinput" required value="<%=stringValueJson.name%>" >
 		<%}else{%>
-			<input type="text" id="apiname" class="nameinput" placeholder="中文数据接口名称，用于首页显示和搜索" >
+			<input type="text" id="apiname" class="nameinput" required placeholder="中文数据接口名称(英文也可以)，用于首页显示和搜索" >
 		<%}%>
 	</div>
 </div>
 <div class="name">
-	<span class="namespan">API url</span>
+	<span class="namespan">API Name</span>
 	<div class="ti1">
 		<%if(isEdit){%>
-			<input type="text" id="apiurl" class="nameinput" value="<%=stringValueJson.url%>" onblur="checkApiUrl(<%=stringValueJson.url%>)">
+			<input type="text" id="apiurl" class="nameinput" value="<%=stringValueJson.url%>" required onblur="checkApiUrl(<%=stringValueJson.url%>)">
 		<%}else{%>
-			<input type="text" id="apiurl" onblur="checkApiUrl()" class="nameinput" placeholder="英文APIurl，用于获取数据，http://localhost:3000/getjson/APIurl，不能重复" >
+			<input type="text" id="apiurl" onblur="checkApiUrl()" class="nameinput" required placeholder="英文API name(不建议中文)(不用写域名链接)(举例：a.com/test只需要写test)" >
 		<%}%>
 	</div>
 </div>
-<p id="warn">提示：此API url 已经存在，继续保存将会覆盖！</p>
+<p id="warn">提示：此API Name 已经存在，继续保存将会覆盖！</p>
 <div class="edit">
 	<div class="edit_left">
 		<em>String<i class="notice"> ( key需要双引号 例如{"a":1} )</i></em>
@@ -89,7 +89,7 @@
 	// 	}
 	// 	catch(err){
  // 			_dom.select(); // 选择对象
-  // 		document.execCommand("Copy"); // 执行浏览器复制命令
+ //  		document.execCommand("Copy"); // 执行浏览器复制命令
 	// 		if(confirm("json格式有误，已复制到剪贴板，是否去检查格式?")){
 	// 			window.open("http://www.bejson.com/")
 	// 		}
@@ -117,7 +117,7 @@
 			apiname = document.getElementById("apiname").value.replace(/\s/g,"");
 			apiurl = document.getElementById("apiurl").value.replace(/\s/g,"");
 		if(!apiname || !apiurl)	{
-			alert("API名称和url为必填");
+			alert("API名称和Name为必填");
 			return false;
 		}
 		$.ajax({
@@ -135,9 +135,10 @@
 			},
 			success:function(){
 				alert('保存成功')
+				location.href='../../'
 			},
 			error:function(){
-				alert("保存失败，请重试！")
+				alert("保存失败，请检查！")
 			}
 		})
 	})

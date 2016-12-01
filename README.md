@@ -1,6 +1,10 @@
 ## 使用 NodeJs 实现本地或线上及线上自我学习测试接口系统 ##
 
 无数据库的情况下，实现数据持久化，通过`api url`返回`json` 数据，提高前端开发效率！
+
+## 预览：##
+![image](https://github.com/PhotoArtLife/jsonServer/blob/master/public/images/view.jpg)
+
 ## 实现功能 ##
  1. 完整的操作页面
  2. 首页展示所有保存的接口列表
