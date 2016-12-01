@@ -10,6 +10,16 @@ a{
 ul,li{
 	list-style: none
 }
+/*字体svg通用code*/
+.icon {
+  font-size: 1.5em;
+   color: #860000;
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+
 #header{
 	height: 80px;
     line-height: 80px;
@@ -109,9 +119,15 @@ ul,li{
 	box-sizing: border-box;
 }
 .item>p{
-  width: 360px;
-  height: 50px;
-  line-height: 50px;
+    width: 75%;
+    display: inline-block;
+    word-break: break-all;
+    height: 45px;
+    line-height: 25px;
+}
+.item .ico-delete{
+  float: right;
+  margin:-2px 7px;
 }
 .view{
   color:#fff;

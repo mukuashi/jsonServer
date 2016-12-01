@@ -6,6 +6,11 @@
 				<li>
 					<div class="item">
 						<p><%= item.name%></p>
+						<span class="ico-delete">
+							<svg class="icon" aria-hidden="true">
+  									<use xlink:href="#icon-lajixiang"></use>
+							</svg>
+						</span>
 						<a href="/getjson/<%=item.url%>" target="_blank" class="view act">预览json接口</a>
 						<a href="/edit/<%=item.url%>" target="_blank" class="view act">重新编辑数据</a>
 					</div>
@@ -13,7 +18,7 @@
 			<%})%>
 		</ul>
 	<%}else{%>
-		<p>本地没有找到任何已存在接口，点击右上角创建一个新接口</p>
+		<p style="text-align:center;margin-top:6%;">抱歉，暂时没有找到任何相关的接口，请点击右上角创建一个新接口</p>
 	<%}%>
 
 </div>

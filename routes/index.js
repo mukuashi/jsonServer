@@ -96,7 +96,7 @@ module.exports = function(app){
 		  })
 	  }else{
 			//后台加一道拦截，防止没有文件名和url
-	  	res.json({success:false,message:"名称或url不能为空"})
+	  	res.json({success:false,message:"名称或Name不能为空"})
 	  }
 
 	})
