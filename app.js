@@ -2,9 +2,9 @@
 /**
  * Module dependencies.
  */
-
-var express = require('express')
-  , routes = require('./routes/index.js');
+/*很多代码都是ES5写法，由于时间原因和ES6不太熟就没有花功夫babel细研究*/
+var express = require('express'),
+	routes = require('./routes/index.js');
 
 var app = module.exports = express.createServer();
 
@@ -28,5 +28,5 @@ app.configure('production', function(){
 });
 
 
-app.listen(3000);
+app.listen(3002);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

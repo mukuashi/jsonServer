@@ -1,10 +1,9 @@
-
 <div class="apiInfo">创建一个API</div>
 <div class="name">
 	<span class="namespan">API名称</span>
 	<div class="ti1">
 		<%if(isEdit){%>
-			<input type="text" id="apiname" class="nameinput" required value="<%=stringValueJson.name%>" >
+			<input type="text" id="apiname" class="nameinput" required value="<%=stringValueJson.name%>" placeholder="中文数据接口名称(英文也可以)，用于首页显示和搜索">
 		<%}else{%>
 			<input type="text" id="apiname" class="nameinput" required placeholder="中文数据接口名称(英文也可以)，用于首页显示和搜索" >
 		<%}%>
@@ -14,7 +13,7 @@
 	<span class="namespan">API Name</span>
 	<div class="ti1">
 		<%if(isEdit){%>
-			<input type="text" id="apiurl" class="nameinput" value="<%=stringValueJson.url%>" required onblur="checkApiUrl(<%=stringValueJson.url%>)">
+			<input type="text" id="apiurl" class="nameinput" value="<%=stringValueJson.url%>" placeholder="英文API name(不建议中文)(不用写域名链接)(举例：a.com/test只需要写test)" required onblur="checkApiUrl(<%=stringValueJson.url%>)">
 		<%}else{%>
 			<input type="text" id="apiurl" onblur="checkApiUrl()" class="nameinput" required placeholder="英文API name(不建议中文)(不用写域名链接)(举例：a.com/test只需要写test)" >
 		<%}%>
@@ -69,34 +68,16 @@
 <div class="apiInfo">接口备注</div>
 <div>
 	<%if(isEdit){%>
-		<textarea  id="api-introduce"><%=stringValueJson.apiInfo%></textarea>
+		<textarea  id="api-introduce" placeholder="你可以选择性填写接口的备注信息"><%=stringValueJson.apiInfo%></textarea>
 	<%}else{%>
-		<textarea id="api-introduce" placeholder="填写接口的备注信息"></textarea>
+		<textarea id="api-introduce" placeholder="你可以选择性填写接口的备注信息"></textarea>
 	<%}%>
 </div>
 <div style="text-align:center">
 	<a class="ok-btn act" id="ok-btn">编辑完成，保存接口</a>
 </div>
-<script src="/lib/json_parse.js"></script>
+<script src="/js/json_parse.js"></script>
 <script>
-	//记录被改变状态
-	var changed = true;
-	// document.getElementById("view-btn").addEventListener("click",function(){
-	// 	var _dom = document.getElementById("eT")
-	// 			stringValue = null;
-	// 	try{
-	// 		stringValue = JSON.parse(_dom.value);
-	// 	}
-	// 	catch(err){
- // 			_dom.select(); // 选择对象
- //  		document.execCommand("Copy"); // 执行浏览器复制命令
-	// 		if(confirm("json格式有误，已复制到剪贴板，是否去检查格式?")){
-	// 			window.open("http://www.bejson.com/")
-	// 		}
-	// 		return false
-	// 	}
-	// 	document.getElementById("result").innerHTML = syntaxHighlight(stringValue)
-	// })
 	function checkApiUrl(oldUrl) {
 		var apiurl = document.getElementById("apiurl").value.replace(/\s/g,"")
 		$.ajax({
@@ -117,7 +98,7 @@
 			apiname = document.getElementById("apiname").value.replace(/\s/g,"");
 			apiurl = document.getElementById("apiurl").value.replace(/\s/g,"");
 		if(!apiname || !apiurl)	{
-			alert("API名称和Name为必填");
+			layer.msg('API名称和Name为必填', {icon: 2});
 			return false;
 		}
 		$.ajax({
@@ -134,11 +115,14 @@
 				})
 			},
 			success:function(){
-				alert('保存成功')
-				location.href='../../'
+				layer.load();
+				setTimeout(function(){
+				  layer.closeAll('loading');
+				}, 1500);
+				location.href='../../';
 			},
 			error:function(){
-				alert("保存失败，请检查！")
+				layer.msg('保存失败了，请检查！', {icon: 7});
 			}
 		})
 	})

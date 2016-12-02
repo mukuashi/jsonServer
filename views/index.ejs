@@ -6,13 +6,20 @@
 				<li>
 					<div class="item">
 						<p><%= item.name%></p>
-						<span class="ico-delete">
-							<svg class="icon" aria-hidden="true">
-  									<use xlink:href="#icon-lajixiang"></use>
-							</svg>
-						</span>
+						<div class="icon-tips">
+							<span title="复制链接" class="api-url-copy">
+								<svg class="icon" aria-hidden="true">
+	  									<use xlink:href="#icon-copy"></use>
+								</svg>
+							</span>
+							<span title="一键删除" class="api-delete">
+								<svg class="icon" aria-hidden="true">
+	  									<use xlink:href="#icon-shanchuicon"></use>
+								</svg>
+							</span>
+						</div>
 						<a href="/getjson/<%=item.url%>" target="_blank" class="view act">预览json接口</a>
-						<a href="/edit/<%=item.url%>" target="_blank" class="view act">重新编辑数据</a>
+						<a href="/edit/<%=item.url%>"  class="view act">重新编辑数据</a>
 					</div>
 				</li>
 			<%})%>
@@ -20,5 +27,4 @@
 	<%}else{%>
 		<p style="text-align:center;margin-top:6%;">抱歉，暂时没有找到任何相关的接口，请点击右上角创建一个新接口</p>
 	<%}%>
-
 </div>

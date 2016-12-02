@@ -1,7 +1,7 @@
 /*!
  * Online Json Parser
  * http://json.parser.online.fr/
- * Copyright 2013, Olivier Cuenot
+ * Copyright 2013,
  */
  var editor = {};
  (function() {

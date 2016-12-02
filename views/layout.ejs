@@ -2,9 +2,14 @@
 <html>
   <head>
     <title>MIUI前端接口可视化创建工具</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="/stylesheets/parse.css" rel='stylesheet' >
-    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="icon" href="http://s01.mifile.cn/favicon.ico" type="image/x-icon">
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href="/css/parse.css" />
+    <script type="text/javascript" src="/js/jquery.all.min.js"></script>
+    <script type="text/javascript" src="/js/ZeroClipboard.min.js"></script>
+    <script type="text/javascript" src="/js/layer.js"></script>
+    <script type="text/javascript" src="/js/checkMore.js"></script>
     <script type="text/javascript" src="/font/iconfont.js"></script>
     <script>
       //搜索
@@ -13,7 +18,7 @@
         if(keyword){
           location.href='/search/'+keyword;
         }else {
-          alert("请输入要您查找的内容")
+          layer.msg("请输入您所要查找的内容");
         }
       }
       function keyForm(event){
@@ -24,15 +29,17 @@
   <body>
   	<div id="header">
   		<div class="header-name">
-  			<a href="/" style="color:#fff"><h1>MIUI前端接口可视化创建工具</h1></a>
+  			<a class="title" href="/" style="color:#fff"><h1>MIUI前端接口可视化创建工具</h1></a>
         <div class="search-tab">
+        <input class="search" id="search" placeholder="输入接口中文名称或英文url Name" onkeyup="keyForm.call(this,event)">
+        <span class="search-btn" onclick="submitSearch()">
+            已有接口搜索
+          </span>
           <a href="/create"  class="create-btn act">
             创建新接口
           </a>
-          <span class="search-btn" onclick="submitSearch()">
-            已有接口搜索
-          </span>
-          <input class="search" id="search" placeholder="输入接口中文名称或英文url Name" onkeyup="keyForm.call(this,event)">
+          
+          
 
         </div>
   		</div>
@@ -40,13 +47,13 @@
     <div class="container">
        <%- body %>
     </div>
-    <div  id="header" class="bottom header-name">
-      <a href="http://kquanr.com"  class="guide morelink act" target="_blank">
-        关于作者
-      </a>
-      <a href="https://github.com/PhotoArtLife/jsonServer"  class="github morelink act" target="_blank">
-        GitHub仓库
-      </a>
-    </div>
+    <ul id="bottom">
+      <li><a href="http://kquanr.com"  class="guide act" target="_blank">
+        <span>关于作者</span>
+      </a></li>
+      <li><a href="https://github.com/PhotoArtLife/jsonServer"  class="github act" target="_blank">
+        <span>GitHub仓库</span>
+      </a></li>
+    </ul>
   </body>
 </html>

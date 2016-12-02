@@ -13,7 +13,7 @@ ul,li{
 /*字体svg通用code*/
 .icon {
   font-size: 1.5em;
-   color: #860000;
+   color: #fff;
    width: 1em; height: 1em;
    vertical-align: -0.15em;
    fill: currentColor;
@@ -21,7 +21,8 @@ ul,li{
 }
 
 #header{
-	height: 80px;
+    width: 100%;
+	  height: 80px;
     line-height: 80px;
     color: #fff;
     margin-bottom: 25px;
@@ -30,28 +31,62 @@ ul,li{
     box-shadow: 0px 0px 10px 0px #000;
 }
 .header-name{
-	width: 1200px;
+	width: 93%;
 	margin:0 auto;
 	height: 80px;
 	position: relative;
 }
-#header h1 {
-    float: left;
-    padding-right: 20px;
-    margin-top: 23px;
-    line-height: 34px;
+#header .title{
+  float: left;
+  width: 28%;
+  text-align: right;
+}
+#header .title h1 {
+    font-size: 1.2em;
+    padding-right: 3.5%;
+    margin-top: 1.5%;
+    line-height: 2em;
     border-right: 4px solid #fff;
     display: inline-block;
 }
+
+#header .search-tab{
+  float: right;
+  width: 70%;
+  margin-top: 1%;
+  height: 50px;  
+}
+.search{
+    background-color: #fff;
+    padding: 8px 14px;
+    height: 20px;
+    color: #333;
+    line-height: 20px;
+    float: left;
+    width: 45%;
+    border: 3px solid #cbcbcb;
+}
+.search-btn{
+    margin: 0.4% 0 0 4%;
+    background-color: #fff;
+    padding: 8px 14px;
+    height: 20px;
+    color: #333;
+    line-height: 20px; 
+    float: left;
+    cursor: pointer;
+}
+
 .create-btn{
-	margin-left: 40px;
-	color:#fff;
-    padding: 10px 20px;
+    position: absolute;
+  	margin-left: 3%;
+  	color:#fff;
+    padding: 0.5em 1em;
     background-color:#ff9a14 ;
-    height: 30px;
-    line-height: 30px;
+    height: 1.8em;
+    line-height: 1.8em;
     float: right;
-    font-size: 20px;
+    font-size: 1.2em;
 
 }
 .act{
@@ -67,48 +102,24 @@ ul,li{
 	-o-transform:scale(1.2);
 	-ms-transform:scale(1.2);
 }
-.search-tab{
-	float: right;
-	height: 50px;
-	margin-top: 15px
-}
-.search-btn{
-	margin-left: 10px;
-    background-color: #fff;
-    padding: 8px 14px;
-    height: 20px;
-    color: #333;
-    line-height: 20px;
-    margin-top: 7px;
-    float: right;
-    cursor: pointer;
-}
-.search{
-	margin-left: 10px;
-    background-color: #fff;
-    padding: 8px 14px;
-    height: 20px;
-    color: #333;
-    line-height: 20px;
-    margin-top: 4px;
-    float: right;
-    width: 500px;
-    border: 3px solid #cbcbcb;
-}
+
 .container{
-	width: 1200px;
+	width: 63%;
 	margin:0 auto;
+}
+.container ul.searchlist {
+  text-align: center;
+  width: 100%;
 }
 .searchlist li{
 	height: 80px;
-	width: 396px;
 	box-sizing: border-box;
 	padding: 10px;
 	display: inline-block;
 }
 .item{
 	height:100px;
-	width: 380px;
+	width: 100%;
 	background-color: #75caf4;
 	display: block;
 	cursor: pointer;
@@ -119,21 +130,25 @@ ul,li{
 	box-sizing: border-box;
 }
 .item>p{
-    width: 75%;
+    width: 60%;
+    text-align: left;
     display: inline-block;
     word-break: break-all;
     height: 45px;
     line-height: 25px;
 }
-.item .ico-delete{
-  float: right;
-  margin:-2px 7px;
+.item .icon-tips{
+  width: 30%;
+    float: right;
+}
+.item .icon-tips span {
+
+  margin:-7px 16px;
 }
 .view{
   color:#fff;
-  width: 180px;
+  width: 48%;
   display: inline-block;
-  float: left;
   text-align: center;
 }
 .name{
@@ -145,7 +160,7 @@ ul,li{
 }
 .namespan{
 	height: 80px;
-	width: 200px;
+	width: 16%;
 	line-height: 80px;
 	background-color: #83b157;
 	display: inline-block;
@@ -155,7 +170,7 @@ ul,li{
 }
 .ti1{
 	float: right;
-    width: 1000px;
+    width: 84%;
     background-color: #454545;
     height: 80px
 }
@@ -172,7 +187,7 @@ ul,li{
     outline: none
 }
 .edit{
-	width: 1200px;
+	width: 100%;
 	height:700px;
 	border: 3px solid #cbcbcb;
 	box-sizing: border-box;
@@ -259,21 +274,44 @@ ul,li{
 .null { color: magenta; }
 .key { color: red; }
 
-.bottom{
-  margin-top: 100px;
-  padding:0 50px ;
-  box-sizing: border-box;
-}
-.morelink{
+ul#bottom{
+    position: relative;
+    width: 63%;
+    padding: 0 1%;
+    margin: 3% auto;
+    box-sizing: border-box;
+    height: 80px;
+    line-height: 80px;
     color: #fff;
-    background-size: 30px;
+    overflow: hidden;
+    background: #2e74c3;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+ul#bottom li{
+  display: inline-block;
+}
+ul#bottom li:first-child{
+    float: left; 
+    margin-left: 8%;  
+}
+ul#bottom li:last-child{
+    float: right; 
+    margin-right: 17%;  
+}
+ul#bottom li a{
+    color: #fff;
+    background-size: 45%;
     background-repeat: no-repeat;
     background-position: 0;
-    height: 30px;
     display: inline-block;
-    padding-left: 40px;
-    line-height: 30px;
-    margin-right: 100px
+    width: 100%;
+ 
+}
+ul#bottom li a span{
+  display: inline-block;
+  position: relative;
+  left: 50%;
+    
 }
 .guide{
   background-image: url(../images/guide.png);

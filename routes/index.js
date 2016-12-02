@@ -1,8 +1,6 @@
-
 /*
  * GET home page.
  */
-
 var fs = require('fs')
 
 function saveName(name,url){
