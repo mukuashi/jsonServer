@@ -1,4 +1,4 @@
-## 使用 NodeJs 实现本地或线上及线上自我学习测试接口系统 ##
+## 使用 NodeJs 实现本地及线上前端自我开发测试接口系统 ##
 
 Node(Express)：http://www.expressjs.com.cn
 
@@ -19,7 +19,7 @@ jquery等
  5. 编辑过程实时预览和错误提示
  6. 根据接口名称或者url进行检索
  7. 提供url跨域调用
- 
+ 8. 接口更新及删除
 ## 前言 ##
 
 
@@ -58,9 +58,16 @@ jquery等
 
 ## 使用方法介绍 ##
 
- 1. `github`下载源码，并执行 `npm install` 安装
- 2. 启动node服务，`node app.js`。  （建议使用 `supervisor app.js` 可以自行重启服务，通过`npm install supervisor -g`  安装模块）
- 3. 打开首页  http://localhost:3000/或http://你的域名/端口号（https://你的域名/端口号）  建议用chrome访问
+ 1. `github`下载源码：git clone git@github.com:PhotoArtLife/jsonServer.git 并执行 `npm install` 安装（cnpm有的时候也有坑，不过还是凑合着用）
+
+ 安装：npm install -g cnpm --registry=https://registry.npm.taobao.org
+ cnpm install(安装所有依赖模块)
+
+ 2. 启动node服务(两种方式)，`node start`或`pm2 start server.json `(前者会合并命令，自动执行pm2 start app.js)
+备注：
+本项目中用到一款利器：pm2—管理Node.js应用，生产环境进程管理工具(进程守护工具)，用来在生产／开发环境中进行自动重启、日志记录、错误预警等等;
+启动：（支持进程一直运行，除非你执行pm2 stop appid或pm2 delete appid等杀掉进程）
+ 3. 打开首页  http://localhost:3002/或http://你的域名/端口号（https://你的域名/端口号），建议用chrome访问
 
    ![image](https://github.com/PhotoArtLife/jsonServer/blob/master/public/images/3.jpg)
 
@@ -72,7 +79,7 @@ jquery等
 
     ![image](https://github.com/PhotoArtLife/jsonServer/blob/master/public/images/5.jpg)
 
- 5. 使用接口，根据刚刚创建的`url：testapi` 生成一个链接  http://localhost:3000/getjson/testapi
+ 5. 使用接口，根据刚刚创建的`url：testapi` 生成一个链接  http://localhost:3002/getjson/testapi
 可以在控制台调用一下这个`url`可以看出就是我们刚刚存储的`json`数据。
    ![image](https://github.com/PhotoArtLife/jsonServer/blob/master/public/images/6.jpg)
  6. 搜索功能：在搜索框输入接口中文描述名称或者`apiurl`的名称即可。
@@ -86,5 +93,4 @@ jquery等
 
 ## 总结 ##
 二次开发，作为学习node的笔记
-
-  [1]: https://github.com/kliuj/local-ajax-api
+备注：来自阿里云/个人驿站：http://kquanr.com

@@ -1,12 +1,24 @@
 {
-    "name": "Node-API-Create",
-    "version": "0.1.1",
-    "private": true,
-    "dependencies": {
-      	"express": "2.5.8",
-    	"ejs": ">= 0.0.1"
- 	},
-  	"scripts": {
-   		"start": "node app.js"    	
-  	}
+  "name": "jsonServer",
+  "version": "0.1.1",
+  "author": "Mich@PhotoArtLife",
+  "license": "ISC",
+  "description": "MIUI前端接口可视化创建工具",
+  "keywords": ["MIUI前端接口可视化创建工具", "前端自我开发接口生成工具"],
+  "homepage": "http://kquanr.com",
+  "main": "app.js",
+  "dependencies": {
+    "express": "2.5.8",
+    "ejs": ">= 0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PhotoArtLife/jsonServer"
+  },
+  "scripts": {
+    "start": "pm2 start server.json"
+  },
+  "devDependencies": {
+    "pm2": "^1.1.3"
+  }
 }
