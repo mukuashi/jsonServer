@@ -1,4 +1,4 @@
-## 使用 NodeJs 实现本地及线上前端自我开发测试接口系统 ##
+## 使用 Node.js 实现本地及线上前端自我开发测试接口系统 ##
 
 Node(Express)：http://www.expressjs.com.cn
 
@@ -54,16 +54,18 @@ jquery等
 ## 实现本地或线上化接口服务 ##
 本文介绍了一个简单的平台化方案，创建一个本地或线上化的服务系统，你也可以把它布到线上，用于相应的http或https服务，这样得到数据格式之后，本地或线上生成一个可用的 `url` 用于`ajax`请求，而且还可以让数据持久化，如果放在局域网内，接口还可以共享给小伙伴。
 
-说到持久化，那么必须涉及到数据的存储，用于存储的数据库有很多，我以前用过`mongodb`结合`nodejs`使用，也是蛮好的，但是数据库安装也蛮麻烦的，我们这里有一个更简便的，硬盘本身就是一个`“数据库”` ，所以我们可以使用`nodejs`的`fs`模块直接创建`json`文件，读取`json`文件。这样创建的每一个`json`文件都对于一个接口服务，只要不删除，就可以一直重复利用。
+说到持久化，那么必须涉及到数据的存储，用于存储的数据库有很多，我以前用过`mongodb`结合`Node.js`使用，也是蛮好的，但是数据库安装也蛮麻烦的，我们这里有一个更简便的，硬盘本身就是一个`“数据库”` ，所以我们可以使用`Node.js`的`fs`模块直接创建`json`文件，读取`json`文件。这样创建的每一个`json`文件都对于一个接口服务，只要不删除，就可以一直重复利用。
 
 ## 使用方法介绍 ##
 
  1. `github`下载源码：git clone git@github.com:PhotoArtLife/jsonServer.git 并执行 `npm install` 安装（cnpm有的时候也有坑，不过还是凑合着用）
 
  安装：npm install -g cnpm --registry=https://registry.npm.taobao.org
+ 
  cnpm install(安装所有依赖模块)
 
  2. 启动node服务(两种方式)，`node start`或`pm2 start server.json `(前者会合并命令，自动执行pm2 start app.js)
+
 备注：
 本项目中用到一款利器：pm2—管理Node.js应用，生产环境进程管理工具(进程守护工具)，用来在生产／开发环境中进行自动重启、日志记录、错误预警等等;
 启动：（支持进程一直运行，除非你执行pm2 stop appid或pm2 delete appid等杀掉进程）
@@ -93,4 +95,5 @@ jquery等
 
 ## 总结 ##
 二次开发，作为学习node的笔记
+
 备注：来自阿里云/个人驿站：http://kquanr.com

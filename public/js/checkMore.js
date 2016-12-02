@@ -5,7 +5,15 @@ $(document).ready(function(){
 	});
 
 	$(".api-delete").on("click",function(){
-		layer.msg('好的，已经成功删除该记录', {icon: 1});
-		window.location.reload()
+		layer.confirm('你确定要删除该条数据？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(){
+		  layer.msg('好的，你已经成功删除该记录！', {icon: 1});
+		  window.location.reload()
+		}, function(){
+		  return true;
+		});
+		
+		
 	});
 });

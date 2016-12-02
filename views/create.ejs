@@ -115,11 +115,12 @@
 				})
 			},
 			success:function(){
-				layer.load();
+				var loadingAjax = layer.load(3, {time: '1000'});
 				setTimeout(function(){
-				  layer.closeAll('loading');
+				  layer.close('loadingAjax');
+				  layer.msg('保存成功！', {icon: 6});
+				  location.href="../../";
 				}, 1500);
-				location.href='../../';
 			},
 			error:function(){
 				layer.msg('保存失败了，请检查！', {icon: 7});
