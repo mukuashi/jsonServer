@@ -51,10 +51,10 @@ ul,li{
 }
 
 #header .search-tab{
-  float: right;
-  width: 70%;
-  margin-top: 1%;
-  height: 50px;  
+    float: right;
+    width: 70%;
+    position: relative;
+    top: 24%;
 }
 .search{
     background-color: #fff;
@@ -83,8 +83,8 @@ ul,li{
   	color:#fff;
     padding: 0.5em 1em;
     background-color:#ff9a14 ;
-    height: 1.8em;
-    line-height: 1.8em;
+    height: 1.6em;
+    line-height: 1.6em;
     float: right;
     font-size: 1.2em;
 
@@ -108,15 +108,17 @@ ul,li{
 	margin:0 auto;
 }
 .container ul.searchlist {
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 .searchlist li{
+  width: 49.5%;
 	height: 80px;
 	box-sizing: border-box;
 	padding: 10px;
 	display: inline-block;
 }
+
 .item{
 	height:100px;
 	width: 100%;
@@ -129,26 +131,30 @@ ul,li{
 	line-height: 40px;
 	box-sizing: border-box;
 }
-.item>p{
-    width: 60%;
-    text-align: left;
-    display: inline-block;
-    word-break: break-all;
-    height: 45px;
-    line-height: 25px;
+.item .lineOne{
+  height: 50px;
+  width: 100%;
 }
-.item .icon-tips{
-  width: 30%;
-    float: right;
+.item .lineOne>p{
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+  word-break: break-all;
+  height: 45px;
+  line-height: 25px;
 }
-.item .icon-tips span {
-
+.item .lineOne .icon-tips{
+  float: right;
+  width: 50%;
+}
+.item .lineOne .icon-tips span {
   margin:-7px 16px;
 }
 .view{
   color:#fff;
   width: 48%;
   display: inline-block;
+  float: left;
   text-align: center;
 }
 .name{
@@ -170,9 +176,9 @@ ul,li{
 }
 .ti1{
 	float: right;
-    width: 84%;
-    background-color: #454545;
-    height: 80px
+  width: 84%;
+  background-color: #454545;
+  height: 80px
 }
 .nameinput{
 	height: 80px;
@@ -194,7 +200,7 @@ ul,li{
 	margin-top: 40px
 }
 .edit_left{
-	width: 590px;
+	width: 49%;
 	padding: 10px 20px;
 	display: inline-block;
 	box-sizing: border-box;
